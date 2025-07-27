@@ -19,14 +19,8 @@
         <!-- Blog Post 2 (Most Recent) -->
         <article class="blog-post">
             <header class="post-header">
+                <time datetime="2025-07-28">July 28, 2025</time>
                 <h2>Learning HTML Games</h2>
-                <div class="post-meta">
-                    <time datetime="2025-07-28">July 28, 2025</time>
-                    <span class="post-tags">
-                        <span class="tag">javascript</span>
-                        <span class="tag">games</span>
-                    </span>
-                </div>
             </header>
 
             <div class="post-content">
@@ -69,14 +63,8 @@ gameLoop();</code></pre>
         <!-- Blog Post 1 -->
         <article class="blog-post">
             <header class="post-header">
+                <time datetime="2025-07-27">July 27, 2025</time>
                 <h2>My First Blog Post</h2>
-                <div class="post-meta">
-                    <time datetime="2025-07-27">July 27, 2025</time>
-                    <span class="post-tags">
-                        <span class="tag">personal</span>
-                        <span class="tag">web development</span>
-                    </span>
-                </div>
             </header>
 
             <div class="post-content">
@@ -123,41 +111,25 @@ gameLoop();</code></pre>
             border-bottom: 1px solid #eee;
             padding-bottom: 1rem;
             margin-bottom: 1.5rem;
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+        }
+
+        .post-header time {
+            color: #999;
+            font-size: 0.9rem;
+            white-space: nowrap;
         }
 
         .post-header h2 {
-            color: #ffffff;
-            margin-bottom: 0.5rem;
-            font-size: 1.8rem;
-            border-bottom: none;
-            padding-bottom: 0;
+            color: #333;
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
             background: transparent;
             padding: 0;
-        }
-
-        .post-meta {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            color: #ecf0f1;
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
-            background: transparent;
-            padding: 10;
-        }
-
-        .post-tags {
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .tag {
-            background: rgba(255, 255, 255, 0.2);
-            color: #ecf0f1;
-            padding: 0.2rem 0.5rem;
-            border-radius: 8px;
-            font-size: 0.8rem;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: none;
         }
 
         .post-content {
