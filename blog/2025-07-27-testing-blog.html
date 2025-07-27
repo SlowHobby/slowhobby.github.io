@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Post Title - Your Name</title>
+    <title>Blog - Your Name</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -11,20 +11,70 @@
         <h1>My Blog</h1>
         <nav>
             <a href="../">Home</a>
-            <a href="index.html">All Posts</a>
             <a href="../games/">Games</a>
         </nav>
     </header>
 
     <main>
+        <!-- Blog Post 2 (Most Recent) -->
         <article class="blog-post">
             <header class="post-header">
-                <h1>My First Blog Post</h1>
+                <h2>Learning HTML Games</h2>
+                <div class="post-meta">
+                    <time datetime="2025-07-28">July 28, 2025</time>
+                    <span class="post-tags">
+                        <span class="tag">javascript</span>
+                        <span class="tag">games</span>
+                    </span>
+                </div>
+            </header>
+
+            <div class="post-content">
+                <p>Today I started working on my first HTML game using the Canvas API. It's amazing how much you can do with just vanilla JavaScript!</p>
+
+                <h3>What I Learned</h3>
+                <ul>
+                    <li>How to draw on HTML Canvas</li>
+                    <li>Game loop fundamentals</li>
+                    <li>Event handling for user input</li>
+                </ul>
+
+                <p>Here's a simple example of drawing a moving square:</p>
+                <pre><code>const canvas = document.getElementById('gameCanvas');
+const ctx = canvas.getContext('2d');
+
+let x = 50, y = 50;
+
+function gameLoop() {
+    // Clear canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    // Draw square
+    ctx.fillStyle = 'blue';
+    ctx.fillRect(x, y, 30, 30);
+    
+    // Move square
+    x += 2;
+    if (x > canvas.width) x = 0;
+    
+    requestAnimationFrame(gameLoop);
+}
+
+gameLoop();</code></pre>
+
+                <p>Next, I want to add collision detection and make it interactive. The possibilities are endless!</p>
+            </div>
+        </article>
+
+        <!-- Blog Post 1 -->
+        <article class="blog-post">
+            <header class="post-header">
+                <h2>My First Blog Post</h2>
                 <div class="post-meta">
                     <time datetime="2025-07-27">July 27, 2025</time>
                     <span class="post-tags">
-                        <a href="#" class="tag">web development</a>
-                        <a href="#" class="tag">personal</a>
+                        <span class="tag">personal</span>
+                        <span class="tag">web development</span>
                     </span>
                 </div>
             </header>
@@ -32,40 +82,22 @@
             <div class="post-content">
                 <p>Welcome to my personal blog! This is where I'll be sharing my thoughts on coding, my latest projects, and things I'm learning.</p>
 
-                <h2>What I'm Working On</h2>
+                <h3>What I'm Working On</h3>
                 <p>Currently, I'm focused on building simple HTML games and learning JavaScript. It's been really exciting to see how much you can do with just vanilla JS.</p>
 
-                <h3>My Goals</h3>
+                <p>My goals for this blog:</p>
                 <ul>
-                    <li>Build at least one game per month</li>
-                    <li>Document my learning process</li>
+                    <li>Document my learning journey</li>
                     <li>Share useful resources I discover</li>
+                    <li>Build at least one game per month</li>
                 </ul>
 
-                <p>I'm also planning to write about:</p>
                 <blockquote>
                     <p>"The best way to learn programming is to build projects you're excited about."</p>
                 </blockquote>
 
-                <p>Here's a simple code example of something I learned today:</p>
-                <pre><code>// Simple function to get random number
-function getRandomNumber(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-console.log(getRandomNumber(1, 10));</code></pre>
-
-                <p>That's all for this first post. Thanks for reading!</p>
+                <p>I'm excited to see where this journey takes me. Thanks for following along!</p>
             </div>
-
-            <footer class="post-footer">
-                <div class="post-navigation">
-                    <a href="2025-07-28-second-post.html" class="next-post">Next Post: Learning HTML Games →</a>
-                </div>
-                <div class="back-to-blog">
-                    <a href="index.html">← Back to all posts</a>
-                </div>
-            </footer>
         </article>
     </main>
 
@@ -77,21 +109,28 @@ console.log(getRandomNumber(1, 10));</code></pre>
         .blog-post {
             background: white;
             padding: 2rem;
+            margin: 2rem 0;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            max-width: none;
+            border-bottom: 3px solid #3498db;
+        }
+
+        .blog-post:last-of-type {
+            margin-bottom: 3rem;
         }
 
         .post-header {
-            border-bottom: 2px solid #3498db;
+            border-bottom: 1px solid #eee;
             padding-bottom: 1rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
-        .post-header h1 {
+        .post-header h2 {
             color: #2c3e50;
             margin-bottom: 0.5rem;
-            font-size: 2.2rem;
+            font-size: 1.8rem;
+            border-bottom: none;
+            padding-bottom: 0;
         }
 
         .post-meta {
@@ -111,31 +150,21 @@ console.log(getRandomNumber(1, 10));</code></pre>
         .tag {
             background: #e8f4fd;
             color: #2980b9;
-            padding: 0.2rem 0.5rem;
+            padding: 0.2rem 0.6rem;
             border-radius: 12px;
-            text-decoration: none;
             font-size: 0.8rem;
-        }
-
-        .tag:hover {
-            background: #d4edda;
         }
 
         .post-content {
             line-height: 1.7;
-            font-size: 1.1rem;
-        }
-
-        .post-content h2 {
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            color: #2c3e50;
+            font-size: 1.05rem;
         }
 
         .post-content h3 {
             margin-top: 1.5rem;
             margin-bottom: 0.75rem;
             color: #34495e;
+            font-size: 1.2rem;
         }
 
         .post-content ul, .post-content ol {
@@ -171,59 +200,25 @@ console.log(getRandomNumber(1, 10));</code></pre>
             font-size: 0.9rem;
         }
 
-        .post-footer {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid #eee;
-        }
-
-        .post-navigation {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 1rem;
-        }
-
-        .next-post, .prev-post {
-            color: #3498db;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .next-post:hover, .prev-post:hover {
-            text-decoration: underline;
-        }
-
-        .back-to-blog {
-            text-align: center;
-        }
-
-        .back-to-blog a {
-            color: #7f8c8d;
-            text-decoration: none;
-        }
-
-        .back-to-blog a:hover {
-            color: #3498db;
-        }
-
         /* Mobile responsiveness */
         @media (max-width: 600px) {
+            .blog-post {
+                margin: 1rem 0;
+                padding: 1.5rem;
+            }
+            
             .post-meta {
                 flex-direction: column;
                 align-items: flex-start;
+                gap: 0.5rem;
             }
             
-            .post-header h1 {
-                font-size: 1.8rem;
+            .post-header h2 {
+                font-size: 1.5rem;
             }
             
             .post-content {
                 font-size: 1rem;
-            }
-            
-            .post-navigation {
-                flex-direction: column;
-                gap: 0.5rem;
             }
         }
     </style>
